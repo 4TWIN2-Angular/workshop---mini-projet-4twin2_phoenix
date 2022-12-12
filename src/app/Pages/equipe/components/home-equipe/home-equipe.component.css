@@ -1,0 +1,49 @@
+main{
+    width: 90%;
+    margin: 3rem auto 0px;
+}
+
+.black-border{
+    border: 1px solid;
+    color: black;
+}
+
+.toolbar{
+    display: flex;
+    height: 4rem;
+    justify-content: 
+    space-between;
+    align-items: center;
+}
+
+.add-equipe {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    border-color: green;
+}
+
+
+.search-equipe{
+    width: 50%;
+    height: 80%;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 0px 2px rgba(34, 34, 34, 0.5);
+    margin-right: 10px;
+}
+
+.search-equipe input {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+}
+
+
+.noEquipe{
+    font-size: 45px;
+    margin-left: 23%;
+    margin-top: 3%;
+    font-weight: bolder;
+}

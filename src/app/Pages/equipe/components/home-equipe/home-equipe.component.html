@@ -1,0 +1,30 @@
+<main>
+    <!--TOOBAR TO ADD AND SEARCH EQUIPE-->
+
+    <div class="toolbar">
+        <div class="add-equipe">
+            <a routerLink='/ajouterEquipe'><button  type="button" class="btn-online-success btn-lg">Add Equipe</button></a>
+        </div>
+
+        <div class="search-equipe">
+            <input type="search" class="form-control" placeholder="Search Equipe" [(ngModel)]="searchName">
+        </div>
+    </div>
+
+    <div class="equipes" *ngIf="equipes$ | async as listEquipe">
+        <div class="row mt-5" >
+            <ng-container *ngIf="listEquipe.length; else noData">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let equipe of listEquipe | filter: searchName">
+                <!-- {{equipe | json}} -->                
+                <app-inputEquipe [dataEquipe]="equipe"></app-inputEquipe>        
+            </div>
+        </ng-container>
+            <ng-template #noData>
+                <p class="noEquipe">There is No Equipes Added!!</p>
+            </ng-template>
+        </div>
+    </div>        
+</main>
+
+
+

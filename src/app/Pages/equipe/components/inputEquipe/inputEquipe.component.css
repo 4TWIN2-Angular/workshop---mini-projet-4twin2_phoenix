@@ -1,0 +1,19 @@
+.affSalle{
+    margin-top: 40px;
+    margin-right: -60px;
+}
+
+
+
+.buttonUpdate{
+    cursor: pointer;
+} 
+.buttonUpdate:hover{
+    background-color: rgb(221, 206, 206);
+}
+
+.niveauStyle{
+    color:rgb(121, 114, 114);
+    font-size: 15px;
+    font-weight: bolder;
+}
