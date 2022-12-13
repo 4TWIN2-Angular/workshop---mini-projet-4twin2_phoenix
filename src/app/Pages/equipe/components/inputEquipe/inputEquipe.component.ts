@@ -45,12 +45,13 @@ export class InputEquipeComponent implements OnInit {
 
   }
 
-    //  getColor():string{
-    //   if (this.dataEquipe.niveau === "JUNIOR") {
-    //     return ""
-    //   } else if (this.dataEquipe.niveau === "SENIOR") {
-        
-    //   }else {
-    //   }
-    //  }
+      getColor():string{
+       if (this.dataEquipe.niveau === "JUNIOR") {
+         return "blue";
+       } else if (this.dataEquipe.niveau === "SENIOR") {
+        return "green";
+       }else {
+        return "red";
+       }
+      }
 }
