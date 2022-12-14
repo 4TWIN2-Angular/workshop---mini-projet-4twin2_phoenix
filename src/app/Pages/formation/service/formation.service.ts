@@ -8,41 +8,39 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FormationService {
-  formationUrl="http://localhost:4200/formations";
+  formationUrl="http://localhost:9090/kaddem/formation";
 
   constructor(private _http:HttpClient) { }
 
   getFormation(id:number):Observable<Formation>{
-    
-    return this._http.get<Formation>(this.formationUrl+"/"+id);
+
+    return this._http.get<Formation>(this.formationUrl+"/formation"+id);
   }
 
 
-  getAllU():Observable<Formation[]>{
-    console.log("get formation");
+  getAllU(){
     return this._http.get<Formation[]>(this.formationUrl);
   }
 
 
   addFormation(formation:Formation):Observable<Formation>{
     console.log("service appelé");
-    return this._http.post<Formation>(this.formationUrl,formation);
+    return this._http.post<Formation>(this.formationUrl+"/addFormation",formation);
   }
 
-  deleteUniversite(formation:Formation):Observable<Formation>{
-    console.log("delete formation");
-    return this._http.delete<Formation>(this.formationUrl+"/"+formation.idFormation);
+  deleteFormation(formation:Formation){
+    return this._http.delete<Formation>(this.formationUrl+"/formation/"+formation.idFormation);
   }
 
-  updateUniversite(formation:Formation):Observable<Formation>{
-    console.log("update formation");
-    return this._http.put<Formation>(this.formationUrl+"/"+formation.idFormation,formation);
+  updateFormation(id:number,formation:Formation){
+    return this._http.put<Formation>(this.formationUrl+"/formation/"+id,formation);
+  }
+  assign(idF:number,idE: number){
+    // @ts-ignore
+    return this._http.put(this.formationUrl+"/assignEtudiant/"+idF+"/"+idE);
   }
 
-  getByName(nom:string):Observable<Formation[]>{
-    
-    return this._http.get<Formation[]>(this.formationUrl+"/byNom/"+nom);
-  }
 
-  
+
+
 }

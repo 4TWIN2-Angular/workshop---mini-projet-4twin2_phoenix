@@ -1,0 +1,96 @@
+<div class="container-fluid py-5">
+<div class="container py-5" >
+<div class=" col-lg-6 col-offset-6" style="float:none;margin:auto;">
+<div class="bg-secondary rounded p-5">
+<h3 class="text-uppercase mb-4" style="letter-spacing: 5px;">insert your data</h3>
+<form id="form_team" [formGroup]="formationForm" (ngSubmit)="onSubmit()" *ngIf="formationForm">
+<div class="form-group">
+<label for="name">Name *</label>
+<input
+  type="text"
+  class="form-control
+   border-0"
+  id="name"
+  formControlName="nomFormation"
+>
+</div>
+<div class="alert alert-danger" *ngIf="!formationForm.get('nomFormation')?.valid && formationForm.get('nomFormation')?.touched">
+<div *ngIf="formationForm.get('nomFormation')?.errors?.['required']">this field is required !</div>
+<div *ngIf="formationForm.get('nomFormation')?.errors?.['minlength']">minlength = 3 !</div>
+<div *ngIf="formationForm.get('nomFormation')?.errors?.['pattern']">symbols are not allowed !</div>
+</div>
+<div class="form-group">
+<label for="date-debut">date debut</label>
+<input
+  type="date"
+  class="form-control
+   border-0"
+  id="date-debut"
+  formControlName="dateDebutFormation"
+>
+</div>
+<div class="alert alert-danger" *ngIf="!formationForm.get('dateDebutFormation')?.valid && formationForm.get('dateDebutFormation')?.touched">
+<div *ngIf="formationForm.get('dateDebutFormation')?.errors?.['required']">this field is required !</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="date-fin">date fin *</label>
+<input
+  type="date"
+  class="form-control
+   border-0"
+  id="date-fin"
+  formControlName="dateFinFormation"
+>
+</div>
+<div class="alert alert-danger" *ngIf="!formationForm.get('dateFinFormation')?.valid && formationForm.get('dateFinFormation')?.touched">
+<div *ngIf="formationForm.get('dateFinFormation')?.errors?.['required']">this field is required !</div>
+</div>
+
+  <div class="form-group">
+    <label  class="form-label">Image</label>
+    <input
+      type="text"
+      id="image"
+      class="form-control"
+      placeholder="Image Url"
+      formControlName="image"
+      aria-describedby="defaultFormControlHelp"
+    >
+  </div>
+  <div class="alert alert-danger" *ngIf="!formationForm.get('image')?.valid && formationForm.get('image')?.touched">
+    <div *ngIf="formationForm.get('image')?.errors?.['required']">this field is required !</div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">description * </label>
+    <input
+      type="textarea"
+      class="form-control
+   border-0"
+      id="email"
+      formControlName="description"
+    >
+  </div>
+  <div class="alert alert-danger" *ngIf="!formationForm.get('description')?.valid && formationForm.get('description')?.touched">
+    <div *ngIf="formationForm.get('description')?.errors?.['required']">this field is required !</div>
+  </div>
+
+<div class="form-group mb-0">
+<input type="submit" value="submit" class="btn btn-primary py-md-2 px-md-4 font-weight-semi-bold">
+        &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<input type="button" value="back" routerLink="/formation" class="btn btn-danger py-md-2 px-md-4 font-weight-semi-bold">
+</div>
+</form>
+</div>
+
+
+<div class="col-lg-4 mt-5 mt-lg-0">
+</div>
+</div>
+</div>
+</div>
+

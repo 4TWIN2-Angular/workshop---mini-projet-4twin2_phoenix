@@ -1,8 +1,13 @@
 export class Formation {
-    idFormation:number | undefined
-    nomFormation:string | undefined
+    idFormation!:number
+    nomFormation!:string
+    description!:string
+  image!:string
+     dateDebutFormation!: Date
+    dateFinFormation!: Date
+  
 
-    
+
 }
 export enum Specialite {
     IA,

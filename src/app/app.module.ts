@@ -13,6 +13,7 @@ import { FormationDetailComponent } from './Pages/formation/formation-detail/for
 import { SujetDetailComponent } from './Components/formation/sujet-detail/sujet-detail.component';
 import { AllSujetComponent } from './Components/formation/list-sujet/all-sujet.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AllSujetComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
