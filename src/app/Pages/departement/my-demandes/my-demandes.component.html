@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+		<div class="span5">
+            <table style="margin-left: 10rem; " class="table">
+                  <thead>
+                  <tr>
+                      <th></th>
+                      <th style="width: 18rem;">Departement</th>
+                      <th style="width: 18rem;">Date de Creation</th>
+                      <th style="width: 18rem;">Status</th>
+                      <th style="width: 15rem;"></th>   
+                      <th>
+                        <a class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter
+                          </a>
+                        
+                          <div class="dropdown-menu" >
+                            <button class="dropdown-item" (click)="changeStatut('All')">All</button>
+                            <button class="dropdown-item" (click)="changeStatut('Pending')">Pending</button>
+                            <button class="dropdown-item" (click)="changeStatut('Canceled')">Canceled</button>
+                            <button class="dropdown-item" (click)="changeStatut('Rejected')">Rejected</button>
+                          </div>
+                      </th>
+                     
+                                                              
+                  </tr>
+              </thead>   
+            <tbody *ngIf="demandes.length>0">
+                <tr *ngFor="let d of demandes; index as i ">
+                    <td>{{i+1}}</td>
+                    <td>{{d.departement.nomDepart}}</td>
+                    <td>{{d.date | date: 'EEEE, MMMM d, y'}}</td>
+                    <td>{{d.statut}}</td> 
+                    
+                    <td *ngIf="d.statut=='Pending'">
+                        <button class="btn btn-danger" (click)="cancelDemande(d.departement.nomDepart,d.departement.idDepart)">Cancel</button>
+                    </td>                                      
+                </tr>
+                                               
+              </tbody>
+            <td *ngIf="demandes.length==0" colspan="4">
+                <h5 ngClass="c1"> <br/> Non Demandes yet..</h5>
+            </td>
+              
+            </table>
+            </div>
+	</div>
+</div>
